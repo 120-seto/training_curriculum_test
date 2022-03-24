@@ -20,7 +20,6 @@ class CalendarsController < ApplicationController
 
   def get_week
 
-    require "date"
     wday = Date.today.wday
 
     wdays = ['(日)','(月)','(火)','(水)','(木)','(金)','(土)']
@@ -46,7 +45,7 @@ class CalendarsController < ApplicationController
     else
       wday_num = wday_num -7
     end
-    puts wdays[wday_num]
+    
 
       days = {month: (@todays_date+x).month,date: (@todays_date+x).day,plans: today_plans,wdays: wdays[wday_num]}
 
